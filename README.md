@@ -1,17 +1,28 @@
-# My First App
+# BTC/USDT → THB Tracker
 
-A small Node.js + Express web app — my first deployment project.
+A realtime Bitcoin price tracker. Shows the live **BTC/USDT** price from Binance
+and converts it to **Thai Baht (THB)**.
+
+- **Frontend:** React + Vite
+- **Backend:** Express (serves the built app + a `/api/usdthb` exchange-rate endpoint)
+- **Realtime price:** Binance WebSocket (in the browser)
+- **FX rate:** open.er-api.com (cached on the server)
 
 ## Run locally
 
 ```bash
 npm install
-npm start
+npm run build   # builds the React app into ./dist
+npm start       # serves it on http://localhost:3000
 ```
 
-Then open http://localhost:3000
+Open http://localhost:3000
 
-## Routes
+### Dev mode (hot reload)
 
-- `/` — a hello page
-- `/about` — returns JSON info
+In one terminal run `npm start` (the API), in another run `npm run dev` (Vite on
+:5173, which proxies `/api` to :3000).
+
+## Deploy
+
+Push to GitHub; Hostinger auto-deploys (install → build → start).

@@ -1,15 +1,22 @@
 {
-  "name": "my-first-app",
+  "name": "btc-thb-tracker",
   "version": "1.0.0",
-  "description": "My first Node.js app deployed to Hostinger",
-  "main": "app.js",
+  "description": "Realtime BTC/USDT price with USDT to THB conversion (React + Vite + Express)",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.10",
+    "@vitejs/plugin-react": "^4.3.4"
   }
 }
