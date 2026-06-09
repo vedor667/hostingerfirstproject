@@ -1,0 +1,15 @@
+{
+  "name": "my-first-app",
+  "version": "1.0.0",
+  "description": "My first Node.js app deployed to Hostinger",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
