@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // Builds the React app into ./dist, which Express serves in production.
 // In dev (`npm run dev`), proxy /api calls to the Express server on :3000.
+// Named .mjs so Vite always reads it as ESM, regardless of package.json type.
 export default defineConfig({
   plugins: [react()],
   server: {

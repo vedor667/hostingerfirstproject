@@ -1,10 +1,8 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
+const express = require("express");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Cache the USD->THB rate so we don't hit the forex API on every request.
 let cache = { thb: null, ts: 0 };
@@ -18,7 +16,7 @@ app.get("/api/usdthb", async (req, res) => {
   try {
     const r = await fetch("https://open.er-api.com/v6/latest/USD");
     const data = await r.json();
-    const thb = data?.rates?.THB;
+    const thb = data && data.rates && data.rates.THB;
     if (!thb) throw new Error("THB rate missing in response");
     cache = { thb, ts: now };
     res.json({ thb, cached: false });

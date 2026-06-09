@@ -2,7 +2,6 @@
   "name": "btc-thb-tracker",
   "version": "1.0.0",
   "description": "Realtime BTC/USDT price with USDT to THB conversion (React + Vite + Express)",
-  "type": "module",
   "main": "server.js",
   "scripts": {
     "dev": "vite",
